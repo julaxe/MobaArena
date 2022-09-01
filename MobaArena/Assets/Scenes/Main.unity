@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: b4bf0566907dc1047a91958658f588b8, type: 2}
 --- !u!1 &28989326
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &28989327
 Transform:
@@ -801,7 +801,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh19180
+  m_Name: pb_Mesh19872
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1222,6 +1222,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 468653461}
     m_Modifications:
+    - target: {fileID: 583495187859087880, guid: b30ac9f8237c3fc4db5cc7e96ef0f73c, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 583495187859087880, guid: b30ac9f8237c3fc4db5cc7e96ef0f73c, type: 3}
+      propertyPath: m_Acceleration
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 583495187859087880, guid: b30ac9f8237c3fc4db5cc7e96ef0f73c, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 7755777047352729057, guid: b30ac9f8237c3fc4db5cc7e96ef0f73c, type: 3}
       propertyPath: m_Name
       value: Fiora
@@ -1354,7 +1366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efb1ae7a61b254489a4d92a2d5a7065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <State>k__BackingField: 0
 --- !u!1 &1422251776
 GameObject:
   m_ObjectHideFlags: 0

@@ -69,10 +69,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6738284048302090932, guid: d822c251d4789ce408a2965f1997f174, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -3716253903604694256, guid: d822c251d4789ce408a2965f1997f174, type: 3}
       propertyPath: baseCharacter
       value: 
       objectReference: {fileID: 11400000, guid: b69fe1bc01c555a4092d75cf280cd53b, type: 2}
+    - target: {fileID: 3702026314238499004, guid: d822c251d4789ce408a2965f1997f174, type: 3}
+      propertyPath: m_Speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702026314238499004, guid: d822c251d4789ce408a2965f1997f174, type: 3}
+      propertyPath: m_AutoBraking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702026314238499004, guid: d822c251d4789ce408a2965f1997f174, type: 3}
+      propertyPath: m_Acceleration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702026314238499004, guid: d822c251d4789ce408a2965f1997f174, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5826196358729459541, guid: d822c251d4789ce408a2965f1997f174, type: 3}
       propertyPath: m_Name
       value: Dummy
