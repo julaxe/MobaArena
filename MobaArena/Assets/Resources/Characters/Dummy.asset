@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700de379876c4a744b70f60b1f985b06, type: 3}
+  m_Name: Dummy
+  m_EditorClassIdentifier: 
+  _stats:
+    offensiveStats:
+      attackDamage: 0
+      attackDamagePerLevel: 0
+      attackSpeed: 0
+      attackSpeedRatio: 0
+      attackWindup: 0
+      critDamage: 0
+      critStrikeChance: 0
+    defensiveStats:
+      armor: 0
+      armorPerLevel: 0
+      magicResist: 0
+      magicResistPerLevel: 0
+      health: 5000
+      healthPerLevel: 0
+      healthRegen: 0
+      healthRegenPerLevel: 0
+    utilityStats:
+      energy: 0
+      energyRegen: 0
+      mana: 0
+      manaPerLevel: 0
+      manaRegen: 0
+      manaRegenPerLevel: 0
+      abilityHaste: 0
+    otherStats:
+      movementSpeed: 0
+      range: 0
+      gameplayRadius: 0
+      selectionRadius: 0
+      pathingRadius: 0
+      acquisitionRadius: 0
+  Description: it's just a dummy
+  MenuSprite: {fileID: 0}

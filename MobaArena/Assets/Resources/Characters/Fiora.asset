@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700de379876c4a744b70f60b1f985b06, type: 3}
+  m_Name: Fiora
+  m_EditorClassIdentifier: 
+  _stats:
+    offensiveStats:
+      attackDamage: 68
+      attackDamagePerLevel: 3.3
+      attackSpeed: 0.69
+      attackSpeedRatio: 0
+      attackWindup: 13.793
+      critDamage: 0
+      critStrikeChance: 0
+    defensiveStats:
+      armor: 33
+      armorPerLevel: 4.7
+      magicResist: 32
+      magicResistPerLevel: 2.05
+      health: 620
+      healthPerLevel: 99
+      healthRegen: 8.5
+      healthRegenPerLevel: 0.55
+    utilityStats:
+      energy: 0
+      energyRegen: 0
+      mana: 300
+      manaPerLevel: 60
+      manaRegen: 8
+      manaRegenPerLevel: 0.7
+      abilityHaste: 0
+    otherStats:
+      movementSpeed: 345
+      range: 150
+      gameplayRadius: 65
+      selectionRadius: 100
+      pathingRadius: 35
+      acquisitionRadius: 600
+  Description: The grand duelist
+  MenuSprite: {fileID: 0}
