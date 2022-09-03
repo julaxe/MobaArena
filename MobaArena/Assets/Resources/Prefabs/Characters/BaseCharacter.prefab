@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5826196358571619625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,10 +43,11 @@ GameObject:
   - component: {fileID: 8166738112127737742}
   - component: {fileID: -3716253903604694256}
   - component: {fileID: -6738284048302090932}
+  - component: {fileID: 5405031656466504276}
   - component: {fileID: 8016285455999658506}
   - component: {fileID: 7082031146077632435}
   - component: {fileID: 3702026314238499004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BaseCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +127,23 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &5405031656466504276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5826196358729459541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107f442cd733405b996868af6692c979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  defaultCursorTexture: {fileID: 2800000, guid: 87d28997275f30943a4bf1cdc156bb73, type: 3}
+  attackCursorTexture: {fileID: 2800000, guid: 24d21e256b498a944a00e2527ed7618c, type: 3}
 --- !u!114 &8016285455999658506
 MonoBehaviour:
   m_ObjectHideFlags: 0

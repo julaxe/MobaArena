@@ -8,26 +8,21 @@ namespace _Scripts.Units.Character
     public class CharacterMovement : MonoBehaviour
     {
         private NavMeshAgent _navMeshAgent;
+        private CharacterInput _characterInput;
 
         public bool isWalking;
         
         private void OnValidate()
         {
             _navMeshAgent = GetComponent<NavMeshAgent>();
+            _characterInput = GetComponent<CharacterInput>();
         }
 
         private void OnRightClick(InputValue value)
         {
             //move to the position
-
-            var mousePos = Mouse.current.position;
-
-            Ray movePosition = Camera.main.ScreenPointToRay(mousePos.ReadValue());
-
-            if (Physics.Raycast(movePosition, out var hitInfo))
-            {
-                _navMeshAgent.SetDestination(hitInfo.point);
-            }
+            _navMeshAgent.SetDestination(_characterInput.GetCurrentMousePosition());
+            
         }
 
         private void Update()
