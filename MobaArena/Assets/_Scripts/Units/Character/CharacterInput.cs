@@ -6,7 +6,9 @@ namespace _Scripts.Units.Character
 {
     public class CharacterInput : MonoBehaviour
     {
-        private Vector3 _currentMousePos;
+        public Vector3 CurrentMousePos { get; private set; }
+        public Transform CurrentTarget { get; private set; }
+        public CommandType CommandType { get; private set; }
         [SerializeField] private LayerMask interactionLayer;
         [Header("Cursor")]
         [SerializeField] private Texture2D defaultCursorTexture;
@@ -19,29 +21,37 @@ namespace _Scripts.Units.Character
 
             if (Physics.Raycast(movePosition, out var hitInfo, Mathf.Infinity, interactionLayer.value ))
             {
-                _currentMousePos = hitInfo.point;
+                CurrentMousePos = hitInfo.point;
                 if (hitInfo.transform.CompareTag("Enemy"))
                 {
-                    SetAttackCursorTexture();
+                    SetAttackCursor();
+                    SetTarget(hitInfo.transform);
                 }
                 else
                 {
-                    SetDefaultCursorTexture();
+                    SetDefaultCursor();
                 }
             }
         }
 
-        private void SetDefaultCursorTexture()
+        private void SetDefaultCursor()
         {
+            CommandType = CommandType.Move;
             Cursor.SetCursor(defaultCursorTexture, Vector2.zero, CursorMode.Auto);
         }
         
-        private void SetAttackCursorTexture()
+        private void SetAttackCursor()
         {
+            CommandType = CommandType.Attack;
             Cursor.SetCursor(attackCursorTexture, Vector2.zero, CursorMode.Auto);
         }
 
-        public Vector3 GetCurrentMousePosition() => _currentMousePos;
+        private void SetTarget(Transform target) => CurrentTarget = target;
+    }
 
+    public enum CommandType
+    {
+        Move,
+        Attack
     }
 }

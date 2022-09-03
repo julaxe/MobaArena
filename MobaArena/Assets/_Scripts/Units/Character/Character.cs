@@ -1,3 +1,4 @@
+using System;
 using _Scripts.Scriptables;
 using UnityEngine;
 
@@ -5,27 +6,22 @@ namespace _Scripts.Units.Character
 {
     public class Character : MonoBehaviour
     {
-        [SerializeField] private ScriptableCharacterBase baseCharacter;
-    
-        //spells
-    
-        private void Awake() => ExampleGameManager.OnBeforeStateChanged += OnStateChanged;
+        public ScriptableCharacterBase baseCharacter;
 
-        private void OnDestroy() => ExampleGameManager.OnBeforeStateChanged -= OnStateChanged;
+        public CharacterState CharacterState { get; private set; }
 
-        private void OnStateChanged(GameState newState)
+        private void Awake()
         {
-        
+            CharacterState = CharacterState.Idle;
         }
 
-        private void OnMouseDown() {
-            // Only allow interaction when it's the hero turn
+        public void ChangeState(CharacterState state) => CharacterState = state;
+    }
 
-            // Eventually either deselect or ExecuteMove(). You could split ExecuteMove into multiple functions
-            // like Move() / Attack() / Dance()
-
-            Debug.Log("Unit clicked");
-        }
-    
+    public enum CharacterState
+    {
+        Idle,
+        Moving,
+        Attacking
     }
 }

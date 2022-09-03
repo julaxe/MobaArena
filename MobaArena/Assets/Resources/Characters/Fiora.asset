@@ -40,7 +40,7 @@ MonoBehaviour:
       abilityHaste: 0
     otherStats:
       movementSpeed: 345
-      range: 150
+      range: 200
       gameplayRadius: 65
       selectionRadius: 100
       pathingRadius: 35
