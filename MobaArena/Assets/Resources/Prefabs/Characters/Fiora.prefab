@@ -73,6 +73,18 @@ PrefabInstance:
       propertyPath: baseCharacter
       value: 
       objectReference: {fileID: 11400000, guid: 1afa2dda49508a64a9d3f9d41610f666, type: 2}
+    - target: {fileID: 3702026314238499004, guid: d822c251d4789ce408a2965f1997f174, type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702026314238499004, guid: d822c251d4789ce408a2965f1997f174, type: 3}
+      propertyPath: m_Acceleration
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3702026314238499004, guid: d822c251d4789ce408a2965f1997f174, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 5826196358729459541, guid: d822c251d4789ce408a2965f1997f174, type: 3}
       propertyPath: m_Name
       value: Fiora
@@ -99,15 +111,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826196358729459542, guid: d822c251d4789ce408a2965f1997f174, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5826196358729459542, guid: d822c251d4789ce408a2965f1997f174, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5826196358729459542, guid: d822c251d4789ce408a2965f1997f174, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5826196358729459542, guid: d822c251d4789ce408a2965f1997f174, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

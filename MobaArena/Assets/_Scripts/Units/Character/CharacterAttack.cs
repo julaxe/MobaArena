@@ -38,7 +38,7 @@ namespace _Scripts.Units.Character
             
         }
 
-        private void BasicAttack()
+        public void BasicAttack()
         {
             IsAttacking = true;
             attackEvent?.Invoke();
