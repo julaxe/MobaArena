@@ -22,7 +22,7 @@ namespace _Scripts.Units.Character
 
         private void Start()
         {
-            _characterAttack.attackEvent += TriggerBasicAttack;
+            _characterAttack.AttackEvent += TriggerBasicAttack;
         }
 
         private void Update()

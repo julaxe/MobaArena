@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace _Scripts.Units.Character
@@ -9,10 +10,15 @@ namespace _Scripts.Units.Character
         public Vector3 CurrentMousePos { get; private set; }
         public Transform CurrentTarget { get; private set; }
         public CommandType CommandType { get; private set; }
+        
         [SerializeField] private LayerMask interactionLayer;
+        
         [Header("Cursor")]
         [SerializeField] private Texture2D defaultCursorTexture;
         [SerializeField] private Texture2D attackCursorTexture;
+
+        public UnityAction rightClickAction;
+        
         private void Update()
         {
             var mousePos = Mouse.current.position;
@@ -47,6 +53,11 @@ namespace _Scripts.Units.Character
         }
 
         private void SetTarget(Transform target) => CurrentTarget = target;
+
+        private void OnRightClick(InputValue value)
+        {
+            rightClickAction?.Invoke();
+        }
     }
 
     public enum CommandType

@@ -1,4 +1,5 @@
 using System;
+using _Scripts.Scriptables.States;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -7,30 +8,38 @@ namespace _Scripts.Units.Character
 {
     public class CharacterAttack : MonoBehaviour
     {
-        private Character _character;
-        private CharacterInput _characterInput;
-        private CharacterMovement _characterMovement;
-        private Transform _target;
+        [NonSerialized] public Character character;
+        [NonSerialized] public CharacterInput characterInput;
+        [NonSerialized] public CharacterMovement characterMovement;
+        [NonSerialized] public CharacterAnimation characterAnimation;
+        [NonSerialized] public Transform target;
+        
         public bool IsAttacking { get; private set; }
-        public UnityAction attackEvent;
+        public UnityAction AttackEvent;
+        public CharacterState currentState;
 
 
         private void OnValidate()
         {
-            _character = GetComponent<Character>();
-            _characterInput = GetComponent<CharacterInput>();
-            _characterMovement = GetComponent<CharacterMovement>();
+            character = GetComponent<Character>();
+            characterInput = GetComponent<CharacterInput>();
+            characterMovement = GetComponent<CharacterMovement>();
+        }
+
+        private void Start()
+        {
+            if (currentState != null)
+                currentState.OnEnter(this);
         }
 
         private void Update()
         {
-            if (_character.CharacterState != CharacterState.Attacking) return;
-
-            if (IsAttacking) return;
+            currentState.OnUpdate(this);
             
-            if (_characterMovement.InsideRange(_character.baseCharacter.BaseStats.otherStats.range))
+            
+            if (characterMovement.InsideRange(character.baseCharacter.BaseStats.otherStats.range))
             {
-                _characterMovement.StopMovement();
+                characterMovement.StopMovement();
                 
                 //attack
                 BasicAttack();
@@ -38,20 +47,27 @@ namespace _Scripts.Units.Character
             
         }
 
-        public void BasicAttack()
+        public void ChangeAttackState(CharacterState state)
+        {
+            if (currentState == state) return;
+            currentState.OnExit(this);
+            currentState = state;
+            currentState.OnEnter(this);
+        }
+
+        private void BasicAttack()
         {
             IsAttacking = true;
-            attackEvent?.Invoke();
+            AttackEvent?.Invoke();
         }
         
         private void OnRightClick(InputValue value)
         {
-            if (_characterInput.CommandType != CommandType.Attack) return;
+            if (characterInput.CommandType != CommandType.Attack) return;
 
             IsAttacking = false;
-            _character.ChangeState(CharacterState.Attacking);
-            _target = _characterInput.CurrentTarget;
-            _characterMovement.MoveToPoint(_target.position);
+            target = characterInput.CurrentTarget;
+            characterMovement.MoveToPoint(target.position);
         }
     }
 }

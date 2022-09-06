@@ -25,9 +25,6 @@ namespace _Scripts.Units.Character
         {
             isWalking = _navMeshAgent.hasPath;
             
-            if (_character.CharacterState != CharacterState.Moving) return;
-            
-            if(!isWalking) _character.ChangeState(CharacterState.Idle);
         }
         
         private void OnRightClick(InputValue value)
@@ -36,7 +33,6 @@ namespace _Scripts.Units.Character
             if (_characterInput.CommandType == CommandType.Move)
             {
                 MoveToPoint(_characterInput.CurrentMousePos);
-                _character.ChangeState(CharacterState.Moving);
             }
 
         }

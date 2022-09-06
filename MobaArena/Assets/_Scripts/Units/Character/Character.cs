@@ -1,5 +1,6 @@
 using System;
 using _Scripts.Scriptables;
+using _Scripts.Scriptables.States;
 using UnityEngine;
 
 namespace _Scripts.Units.Character
@@ -8,20 +9,7 @@ namespace _Scripts.Units.Character
     {
         public ScriptableCharacterBase baseCharacter;
 
-        public CharacterState CharacterState { get; private set; }
 
-        private void Awake()
-        {
-            CharacterState = CharacterState.Idle;
-        }
-
-        public void ChangeState(CharacterState state) => CharacterState = state;
     }
-
-    public enum CharacterState
-    {
-        Idle,
-        Moving,
-        Attacking
-    }
+    
 }
