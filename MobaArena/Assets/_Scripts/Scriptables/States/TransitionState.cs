@@ -3,23 +3,20 @@ using UnityEngine;
 
 namespace _Scripts.Scriptables.States
 {
-    [CreateAssetMenu(menuName = "States/MovingState")]
-    public class MovingState : CharacterState
+    [CreateAssetMenu(menuName = "States/TransitionState")]
+    public class TransitionState : CharacterState
     {
         public override void OnEnter(CharacterAttack currentAttackState)
         {
             base.OnEnter(currentAttackState);
             
-            Debug.Log("Enter moving state");
-            currentAttackState.characterMovement.MoveToMousePosition();
+            Debug.Log("Enter TransitionState state");
         }
 
         public override void OnUpdate(CharacterAttack currentAttackState)
         {
             base.OnUpdate(currentAttackState);
-
-            currentAttackState.characterAnimation.isWalking = 
-                currentAttackState.characterMovement.NavMeshAgent.hasPath;
+            
         }
 
         public override void OnExit(CharacterAttack currentAttackState)

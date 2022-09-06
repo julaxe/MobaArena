@@ -3,15 +3,15 @@ using UnityEngine;
 
 namespace _Scripts.Scriptables.States
 {
-    [CreateAssetMenu(menuName = "States/MovingState")]
-    public class MovingState : CharacterState
+    [CreateAssetMenu(menuName = "States/MoveAttackState")]
+    public class MoveAttackState : CharacterState
     {
         public override void OnEnter(CharacterAttack currentAttackState)
         {
             base.OnEnter(currentAttackState);
             
-            Debug.Log("Enter moving state");
-            currentAttackState.characterMovement.MoveToMousePosition();
+            Debug.Log("Enter MoveAttackState state");
+            currentAttackState.characterMovement.MoveToTarget();
         }
 
         public override void OnUpdate(CharacterAttack currentAttackState)

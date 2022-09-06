@@ -9,47 +9,38 @@ namespace _Scripts.Units.Character
     {
         private Character _character;
         private CharacterInput _characterInput;
-        private NavMeshAgent _navMeshAgent;
-        
+        [NonSerialized] public NavMeshAgent NavMeshAgent;
 
-        public bool isWalking;
-        
-        private void OnValidate()
+        private void Awake()
         {
             _character = GetComponent<Character>();
             _characterInput = GetComponent<CharacterInput>();
-            _navMeshAgent = GetComponent<NavMeshAgent>();
-        }
-        
-        private void Update()
-        {
-            isWalking = _navMeshAgent.hasPath;
-            
-        }
-        
-        private void OnRightClick(InputValue value)
-        {
-            //move to the position
-            if (_characterInput.CommandType == CommandType.Move)
-            {
-                MoveToPoint(_characterInput.CurrentMousePos);
-            }
-
+            NavMeshAgent = GetComponent<NavMeshAgent>();
         }
 
+
+        public void MoveToMousePosition()
+        {
+            MoveToPoint(_characterInput.CurrentMousePos);
+        }
+
+        public void MoveToTarget()
+        {
+            MoveToPoint(_characterInput.CurrentTarget.position);
+        }
         public void MoveToPoint(Vector3 point)
         {
-            _navMeshAgent.SetDestination(point);
+            NavMeshAgent.SetDestination(point);
         }
 
         public bool InsideRange(float distance)
         {
-            return _navMeshAgent.remainingDistance <= distance*0.01;
+            return NavMeshAgent.remainingDistance <= distance*0.01;
         }
 
         public void StopMovement()
         {
-            _navMeshAgent.SetDestination(transform.position);
+            NavMeshAgent.SetDestination(transform.position);
         }
 
         

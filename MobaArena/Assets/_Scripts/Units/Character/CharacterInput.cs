@@ -9,6 +9,8 @@ namespace _Scripts.Units.Character
     {
         public Vector3 CurrentMousePos { get; private set; }
         public Transform CurrentTarget { get; private set; }
+        
+        public bool IsTargetAnEnemy { get; private set; }
         public CommandType CommandType { get; private set; }
         
         [SerializeField] private LayerMask interactionLayer;
@@ -31,10 +33,12 @@ namespace _Scripts.Units.Character
                 if (hitInfo.transform.CompareTag("Enemy"))
                 {
                     SetAttackCursor();
+                    IsTargetAnEnemy = true;
                     SetTarget(hitInfo.transform);
                 }
                 else
                 {
+                    IsTargetAnEnemy = false;
                     SetDefaultCursor();
                 }
             }

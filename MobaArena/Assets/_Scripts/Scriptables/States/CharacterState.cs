@@ -8,6 +8,7 @@ namespace _Scripts.Scriptables.States
 {
     public abstract class CharacterState : ScriptableObject
     {
+        [NonReorderable]
         public List<Transition> transitions;
 
         public virtual void OnEnter(CharacterAttack currentAttackState)

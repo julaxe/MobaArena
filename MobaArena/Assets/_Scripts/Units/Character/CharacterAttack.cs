@@ -3,6 +3,7 @@ using _Scripts.Scriptables.States;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace _Scripts.Units.Character
 {
@@ -14,8 +15,7 @@ namespace _Scripts.Units.Character
         [NonSerialized] public CharacterAnimation characterAnimation;
         [NonSerialized] public Transform target;
         
-        public bool IsAttacking { get; private set; }
-        public UnityAction AttackEvent;
+        public bool isAttacking;
         public CharacterState currentState;
 
 
@@ -24,6 +24,7 @@ namespace _Scripts.Units.Character
             character = GetComponent<Character>();
             characterInput = GetComponent<CharacterInput>();
             characterMovement = GetComponent<CharacterMovement>();
+            characterAnimation = GetComponent<CharacterAnimation>();
         }
 
         private void Start()
@@ -35,39 +36,14 @@ namespace _Scripts.Units.Character
         private void Update()
         {
             currentState.OnUpdate(this);
-            
-            
-            if (characterMovement.InsideRange(character.baseCharacter.BaseStats.otherStats.range))
-            {
-                characterMovement.StopMovement();
-                
-                //attack
-                BasicAttack();
-            }
-            
         }
 
         public void ChangeAttackState(CharacterState state)
         {
-            if (currentState == state) return;
             currentState.OnExit(this);
             currentState = state;
             currentState.OnEnter(this);
         }
-
-        private void BasicAttack()
-        {
-            IsAttacking = true;
-            AttackEvent?.Invoke();
-        }
         
-        private void OnRightClick(InputValue value)
-        {
-            if (characterInput.CommandType != CommandType.Attack) return;
-
-            IsAttacking = false;
-            target = characterInput.CurrentTarget;
-            characterMovement.MoveToPoint(target.position);
-        }
     }
 }

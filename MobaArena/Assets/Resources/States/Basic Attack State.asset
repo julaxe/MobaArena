@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 071b30b0dc114de5ba08c6b317ac29e8, type: 3}
-  m_Name: Moving State
+  m_Script: {fileID: 11500000, guid: 84492b0e5ea04602ab4839ff4b725d18, type: 3}
+  m_Name: Basic Attack State
   m_EditorClassIdentifier: 
   transitions:
   - decision: {fileID: 11400000, guid: 6e1e345b04a5121458492412feefa96f, type: 2}
     trueState: {fileID: 11400000, guid: fac6f7d0d029c12438a9d0bd36783913, type: 2}
     falseState: {fileID: 0}
-  - decision: {fileID: 11400000, guid: 036a48aac74bd434bb74113d7c1969fa, type: 2}
-    trueState: {fileID: 11400000, guid: a8ce80b86ca79dc49a9fb6ab5b08a52e, type: 2}
+  - decision: {fileID: 11400000, guid: 4a65646050e2fa54791ce8c46cc4ecf1, type: 2}
+    trueState: {fileID: 11400000, guid: 5a4e033e97d075f448e792b57c221248, type: 2}
     falseState: {fileID: 0}

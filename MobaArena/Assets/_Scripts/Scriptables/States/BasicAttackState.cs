@@ -3,23 +3,24 @@ using UnityEngine;
 
 namespace _Scripts.Scriptables.States
 {
-    [CreateAssetMenu(menuName = "States/MovingState")]
-    public class MovingState : CharacterState
+    [CreateAssetMenu(menuName = "States/BasicAttackState")]
+    public class BasicAttackState : CharacterState
     {
         public override void OnEnter(CharacterAttack currentAttackState)
         {
             base.OnEnter(currentAttackState);
             
-            Debug.Log("Enter moving state");
-            currentAttackState.characterMovement.MoveToMousePosition();
+            Debug.Log("Enter BasicAttackState state");
+            
+            currentAttackState.characterMovement.StopMovement();
+            
+            currentAttackState.characterAnimation.TriggerBasicAttack();
         }
 
         public override void OnUpdate(CharacterAttack currentAttackState)
         {
             base.OnUpdate(currentAttackState);
-
-            currentAttackState.characterAnimation.isWalking = 
-                currentAttackState.characterMovement.NavMeshAgent.hasPath;
+            
         }
 
         public override void OnExit(CharacterAttack currentAttackState)
