@@ -10,6 +10,7 @@ namespace _Scripts.Scriptables.States
         {
             base.OnEnter(currentAttackState);
             Debug.Log("Enter idle state");
+            currentAttackState.characterAnimation.ToIdle();
         }
 
         public override void OnUpdate(CharacterAttack currentAttackState)

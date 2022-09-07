@@ -7,29 +7,27 @@ namespace _Scripts.Units.Character
 {
     public class CharacterAnimation : MonoBehaviour
     {
-        private CharacterMovement _characterMovement;
-        private CharacterAttack _characterAttack;
         public Animator animator;
 
-        private readonly int _isWalkingHash = Animator.StringToHash("Walking");
-        private readonly int _basicAttack1Hash = Animator.StringToHash("BasicAttack1");
-        private readonly int _basicAttack2Hash = Animator.StringToHash("BasicAttack2");
+        private static readonly int Walking = Animator.StringToHash("Walking");
+        private static readonly int Idle = Animator.StringToHash("Idle");
+        private static readonly int IdleIn = Animator.StringToHash("IdleIn");
+        private static readonly int Attack1 = Animator.StringToHash("Attack 1");
+        private static readonly int Attack2 = Animator.StringToHash("Attack 2");
 
-        public bool isWalking = false;
-        private void OnValidate()
+        public void ToIdle()
         {
-            _characterMovement = GetComponent<CharacterMovement>();
-            _characterAttack = GetComponent<CharacterAttack>();
+            animator.CrossFade(Idle, 0.2f, 0);
         }
-
-        private void Update()
+        
+        public void ToWalking()
         {
-            animator.SetBool(_isWalkingHash ,isWalking);
+            animator.CrossFade(Walking, 0.00f, 0);
         }
 
         public void TriggerBasicAttack()
         {
-            animator.SetTrigger(Random.Range(0, 2) == 0 ? _basicAttack1Hash : _basicAttack2Hash);
+            animator.CrossFade(Random.Range(0, 2) == 0 ? Attack1 : Attack2, 0.1f, 0);
         }
     }
 }

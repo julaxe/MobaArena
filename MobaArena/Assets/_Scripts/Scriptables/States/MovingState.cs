@@ -12,14 +12,13 @@ namespace _Scripts.Scriptables.States
             
             Debug.Log("Enter moving state");
             currentAttackState.characterMovement.MoveToMousePosition();
+            currentAttackState.characterAnimation.ToWalking();
         }
 
         public override void OnUpdate(CharacterAttack currentAttackState)
         {
             base.OnUpdate(currentAttackState);
 
-            currentAttackState.characterAnimation.isWalking = 
-                currentAttackState.characterMovement.NavMeshAgent.hasPath;
         }
 
         public override void OnExit(CharacterAttack currentAttackState)

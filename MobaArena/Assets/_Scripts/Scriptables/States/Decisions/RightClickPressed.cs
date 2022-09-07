@@ -20,7 +20,6 @@ namespace _Scripts.Scriptables.States.Decisions
 
         private void EventRightClickPressed()
         {
-            Debug.Log("Right Click Pressed");
             rightClickPressed = true;
         }
 
