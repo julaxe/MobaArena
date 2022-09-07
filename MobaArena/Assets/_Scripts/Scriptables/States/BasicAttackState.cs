@@ -9,9 +9,7 @@ namespace _Scripts.Scriptables.States
         public override void OnEnter(CharacterAttack currentAttackState)
         {
             base.OnEnter(currentAttackState);
-            
-            Debug.Log("Enter BasicAttackState state");
-            
+
             currentAttackState.characterMovement.StopMovement();
             
             currentAttackState.characterAnimation.TriggerBasicAttack();

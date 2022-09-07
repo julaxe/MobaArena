@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 342878e52ae8441a9c80733dbe3818be, type: 3}
-  m_Name: Transition Attack_Moving
+  m_Name: Transition Attack_Or_Move
   m_EditorClassIdentifier: 
   transitions:
   - decision: {fileID: 11400000, guid: 5a819e97f2dfce142aa1653246700816, type: 2}

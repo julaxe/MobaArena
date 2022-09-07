@@ -16,6 +16,7 @@ namespace _Scripts.Units.Character
             _character = GetComponent<Character>();
             _characterInput = GetComponent<CharacterInput>();
             NavMeshAgent = GetComponent<NavMeshAgent>();
+            NavMeshAgent.updateRotation = false;
         }
 
 
@@ -28,14 +29,15 @@ namespace _Scripts.Units.Character
         {
             MoveToPoint(_characterInput.CurrentTarget.position);
         }
-        public void MoveToPoint(Vector3 point)
+        private void MoveToPoint(Vector3 point)
         {
             NavMeshAgent.SetDestination(point);
         }
 
-        public bool InsideRange(float distance)
+        public bool InsideRange(float range)
         {
-            return NavMeshAgent.remainingDistance <= distance*0.01;
+            var distance = Vector3.Distance(transform.position, _characterInput.CurrentTarget.position);
+            return distance <= range*0.01;
         }
 
         public void StopMovement()

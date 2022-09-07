@@ -12,6 +12,7 @@ namespace _Scripts.Scriptables.States.Decisions
         }
         public override bool Run(CharacterAttack characterAttack)
         {
+            characterAttack.characterMovement.MoveToTarget();
             return characterAttack.characterMovement.InsideRange(
                 characterAttack.character.baseCharacter.BaseStats.otherStats.range);
         }

@@ -13,9 +13,7 @@ namespace _Scripts.Units.Character
         [NonSerialized] public CharacterInput characterInput;
         [NonSerialized] public CharacterMovement characterMovement;
         [NonSerialized] public CharacterAnimation characterAnimation;
-        [NonSerialized] public Transform target;
-        
-        public bool isAttacking;
+
         public CharacterState currentState;
 
 

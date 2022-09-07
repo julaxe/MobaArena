@@ -9,8 +9,7 @@ namespace _Scripts.Scriptables.States
         public override void OnEnter(CharacterAttack currentAttackState)
         {
             base.OnEnter(currentAttackState);
-            
-            Debug.Log("Enter MoveAttackState state");
+
             currentAttackState.characterMovement.MoveToTarget();
             currentAttackState.characterAnimation.ToWalking();
         }
@@ -18,6 +17,12 @@ namespace _Scripts.Scriptables.States
         public override void OnUpdate(CharacterAttack currentAttackState)
         {
             base.OnUpdate(currentAttackState);
+            //rotate the character to that point
+            var currentTransform = currentAttackState.transform;
+            var view = currentAttackState.characterInput.CurrentTarget.position 
+                       - currentTransform.position;
+            currentAttackState.transform.rotation = Quaternion.Lerp(currentTransform.rotation, 
+                Quaternion.LookRotation(view), 0.1f);
         }
 
         public override void OnExit(CharacterAttack currentAttackState)

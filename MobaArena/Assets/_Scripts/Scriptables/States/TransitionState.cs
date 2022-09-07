@@ -10,7 +10,6 @@ namespace _Scripts.Scriptables.States
         {
             base.OnEnter(currentAttackState);
             
-            Debug.Log("Enter TransitionState state");
         }
 
         public override void OnUpdate(CharacterAttack currentAttackState)

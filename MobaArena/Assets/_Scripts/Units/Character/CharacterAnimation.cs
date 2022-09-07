@@ -27,7 +27,7 @@ namespace _Scripts.Units.Character
 
         public void TriggerBasicAttack()
         {
-            animator.CrossFade(Random.Range(0, 2) == 0 ? Attack1 : Attack2, 0.1f, 0);
+            animator.CrossFade(Random.Range(0, 2) == 0 ? Attack1 : Attack2, 0.0f, 0);
         }
     }
 }

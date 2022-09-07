@@ -8,7 +8,12 @@ namespace _Scripts.Units.Character
     public class CharacterInput : MonoBehaviour
     {
         public Vector3 CurrentMousePos { get; private set; }
+        
+        //this is for attacking
         public Transform CurrentTarget { get; private set; }
+        
+        //this is when clicking with mouse on terrain (not enemy)
+        public Vector3 CurrentMouseDestination { get; private set; }
         
         public bool IsTargetAnEnemy { get; private set; }
         public CommandType CommandType { get; private set; }
@@ -21,6 +26,7 @@ namespace _Scripts.Units.Character
 
         public UnityAction rightClickAction;
         
+
         private void Update()
         {
             var mousePos = Mouse.current.position;
@@ -60,6 +66,7 @@ namespace _Scripts.Units.Character
 
         private void OnRightClick(InputValue value)
         {
+            CurrentMouseDestination = CurrentMousePos;
             rightClickAction?.Invoke();
         }
     }
