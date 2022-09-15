@@ -3,18 +3,18 @@ using UnityEngine;
 
 namespace _Scripts.Scriptables.States.Decisions
 {
-    [CreateAssetMenu(menuName = "Decisions/RightClickPressed")]
-    public class RightClickPressed : CharacterDecision
+    [CreateAssetMenu(menuName = "Decisions/QPressed")]
+    public class QPressed : CharacterDecision
     {
         public override void SubscribeEvents(CharacterAttack characterAttack)
         {
+            
         }
 
         public override bool Run(CharacterAttack characterAttack)
         {
-            return characterAttack.characterInput.rightClickPressed;
+            return characterAttack.characterInput.QPressed;
         }
-        
 
         public override void UnSubscribeEvents(CharacterAttack characterAttack)
         {

@@ -22,7 +22,6 @@ namespace _Scripts.Units
             
             var direction = (CharacterInput.CurrentMousePos - transform.position).normalized;
             var angle = Vector3.SignedAngle( Vector3.forward, direction, Vector3.up);
-            Debug.Log(angle);
             transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f);
             //indicatorImage.rotation = Quaternion.Euler(90, 0.0f, angle);
 

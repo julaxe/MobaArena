@@ -18,14 +18,15 @@ namespace _Scripts.Units.Character
         public bool IsTargetAnEnemy { get; private set; }
         public CommandType CommandType { get; private set; }
         
-        [SerializeField] private LayerMask interactionLayer;
+        [SerializeField] private LayerMask targetLayer;
+        [SerializeField] private LayerMask groundLayer;
         
         [Header("Cursor")]
         [SerializeField] private Texture2D defaultCursorTexture;
         [SerializeField] private Texture2D attackCursorTexture;
 
-        public UnityAction rightClickAction;
-        
+        [NonSerialized] public bool rightClickPressed;
+        [NonSerialized] public bool QPressed;
 
         private void Update()
         {
@@ -33,20 +34,21 @@ namespace _Scripts.Units.Character
 
             var movePosition = Camera.main.ScreenPointToRay(mousePos.ReadValue());
 
-            if (Physics.Raycast(movePosition, out var hitInfo, Mathf.Infinity, interactionLayer.value ))
+            if (Physics.Raycast(movePosition, out var hitInfoEnemy, Mathf.Infinity, targetLayer.value ))
             {
-                CurrentMousePos = hitInfo.point;
-                if (hitInfo.transform.CompareTag("Enemy"))
-                {
                     SetAttackCursor();
                     IsTargetAnEnemy = true;
-                    SetTarget(hitInfo.transform);
-                }
-                else
-                {
-                    IsTargetAnEnemy = false;
-                    SetDefaultCursor();
-                }
+                    SetTarget(hitInfoEnemy.transform);
+            }
+            else
+            {
+                SetDefaultCursor();
+                IsTargetAnEnemy = false;
+            }
+            
+            if(Physics.Raycast(movePosition, out var hitInfo, Mathf.Infinity, groundLayer.value))
+            {
+                CurrentMousePos = hitInfo.point;
             }
         }
 
@@ -66,8 +68,16 @@ namespace _Scripts.Units.Character
 
         private void OnRightClick(InputValue value)
         {
-            CurrentMouseDestination = CurrentMousePos;
-            rightClickAction?.Invoke();
+            rightClickPressed = value.isPressed;
+            if (rightClickPressed)
+            {
+                CurrentMouseDestination = CurrentMousePos;
+            }
+        }
+
+        private void OnSpell1(InputValue value)
+        {
+            QPressed = value.isPressed;
         }
     }
 

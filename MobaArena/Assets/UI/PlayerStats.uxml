@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/PlayerStats.uss?fileID=7433441132597879392&amp;guid=d99053d7d48ff41419853f3b96d1008d&amp;type=3#PlayerStats" />
+    <ui:VisualElement name="PlayerStatsRoot" style="width: 100%; height: 100%; flex-direction: row;">
+        <ui:VisualElement name="Stats" style="width: 20%;" />
+        <ui:VisualElement name="HealthAndSpells" style="width: 60%; background-color: rgba(60, 60, 60, 0.73); border-left-color: rgb(206, 214, 7); border-right-color: rgb(206, 214, 7); border-top-color: rgb(206, 214, 7); border-bottom-color: rgb(206, 214, 7); border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-top-left-radius: 2%; border-bottom-left-radius: 2%; border-top-right-radius: 2%; border-bottom-right-radius: 2%;">
+            <ui:VisualElement name="Spells" style="width: 100%; height: 60%; flex-direction: row;">
+                <ui:VisualElement name="Passive" style="height: 100%; width: 10%; flex-direction: row;">
+                    <ui:VisualElement name="PassiveImage" class="summoner" style="background-image: url(&apos;project://database/Assets/PlayMaker/Editor/Watermarks/Bang.png?fileID=2800000&amp;guid=ac2f9ada26884da4588ffae7d1e8121f&amp;type=3#Bang&apos;);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Abilities" style="width: 70%; height: 100%; flex-direction: row;">
+                    <ui:VisualElement name="Q" class="ability" style="background-image: url(&apos;project://database/Assets/PlayMaker/Editor/Watermarks/Alien.png?fileID=2800000&amp;guid=24dda0ac7b175944f8968586045fbe32&amp;type=3#Alien&apos;);" />
+                    <ui:VisualElement name="W" class="ability" style="background-image: url(&apos;project://database/Assets/PlayMaker/Editor/Watermarks/Alien.png?fileID=2800000&amp;guid=24dda0ac7b175944f8968586045fbe32&amp;type=3#Alien&apos;);" />
+                    <ui:VisualElement name="E" class="ability" style="background-image: url(&apos;project://database/Assets/PlayMaker/Editor/Watermarks/Alien.png?fileID=2800000&amp;guid=24dda0ac7b175944f8968586045fbe32&amp;type=3#Alien&apos;);" />
+                    <ui:VisualElement name="R" class="ability" style="background-image: url(&apos;project://database/Assets/PlayMaker/Editor/Watermarks/Alien.png?fileID=2800000&amp;guid=24dda0ac7b175944f8968586045fbe32&amp;type=3#Alien&apos;);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="Summoners" style="width: 20%; height: 100%; flex-direction: row;">
+                    <ui:VisualElement name="summoner1" class="summoner" style="background-image: url(&apos;project://database/Assets/PlayMaker/Editor/Watermarks/Dog.png?fileID=2800000&amp;guid=662b000d02a94844cab8343d1fb50b61&amp;type=3#Dog&apos;);" />
+                    <ui:VisualElement name="summoner1" class="summoner" style="background-image: url(&apos;project://database/Assets/PlayMaker/Editor/Watermarks/Dog.png?fileID=2800000&amp;guid=662b000d02a94844cab8343d1fb50b61&amp;type=3#Dog&apos;);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="HealthAndMana" style="width: 100%; height: 40%;">
+                <ui:ProgressBar title="my-progress" name="Health" style="width: 100%; flex-grow: 1;" />
+                <ui:ProgressBar title="my-progress" name="Mana" style="width: 100%; flex-grow: 1;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Items" style="width: 20%;" />
+    </ui:VisualElement>
+</ui:UXML>

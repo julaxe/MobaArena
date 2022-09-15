@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="PlayerStats" src="project://database/Assets/UI/PlayerStats.uxml?fileID=9197481963319205126&amp;guid=53c77868d92279646a5cefd3bbd6d2dd&amp;type=3#PlayerStats" />
+    <ui:VisualElement name="Root" style="width: 100%; height: 100%; flex-direction: column-reverse;">
+        <ui:VisualElement name="Bottom" style="flex-direction: row; width: 100%; height: 30%;">
+            <ui:VisualElement name="Left" style="flex-grow: 0.7;" />
+            <ui:VisualElement name="Middle" style="flex-grow: 1; flex-direction: column-reverse;">
+                <ui:VisualElement name="PlayerStats" style="background-color: rgba(67, 67, 67, 0.64); width: 100%; height: 80%;">
+                    <ui:Instance template="PlayerStats" name="PlayerStats" style="width: 100%; height: 100%;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="Right" style="flex-grow: 0.7;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

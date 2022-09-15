@@ -7,21 +7,21 @@
             "actions": [
                 {
                     "name": "RightClick",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "b2d48b76-7fe9-4835-9a69-e8cc04e5698f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press(behavior=2)",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "LeftClick",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "4e29e1c6-23a5-4c57-86a6-88cfb8812bb3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Spell1",
@@ -29,7 +29,7 @@
                     "id": "a1edb47d-9e8b-42ad-8d50-d77db6e9057a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": true
                 },
                 {

@@ -29,5 +29,10 @@ namespace _Scripts.Units.Character
         {
             animator.CrossFade(Random.Range(0, 2) == 0 ? Attack1 : Attack2, 0.0f, 0);
         }
+
+        public void PlayAnimation(string animationName, float transitionTime = 0.0f)
+        {
+            animator.CrossFade(animationName, transitionTime, 0);
+        }
     }
 }
