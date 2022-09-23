@@ -12,3 +12,15 @@
     height: 60%;
     flex-grow: 1;
 }
+
+.unity-progress-bar {
+    -unity-background-image-tint-color: rgba(255, 0, 0, 255);
+    background-color: rgba(0, 0, 0, 255);
+    background-image: none;
+}
+
+.unity-text-element {
+}
+
+.unity-button {
+}

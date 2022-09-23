@@ -38,6 +38,7 @@ namespace _Scripts.Units.Character
 
         public void ChangeAttackState(CharacterState state)
         {
+            if (state == null) return;
             currentState.OnExit(this);
             currentState = state;
             currentState.OnEnter(this);
