@@ -5,6 +5,8 @@
     padding-right: 1%;
     padding-top: 1%;
     padding-bottom: 1%;
+    color: rgba(255, 255, 255, 255);
+    -unity-font-style: bold;
 }
 
 .summoner {
@@ -14,8 +16,8 @@
 }
 
 .unity-progress-bar {
-    -unity-background-image-tint-color: rgba(255, 0, 0, 255);
-    background-color: rgba(0, 0, 0, 255);
+    -unity-background-image-tint-color: rgb(255, 0, 0);
+    background-color: rgb(0, 0, 0);
     background-image: none;
 }
 
